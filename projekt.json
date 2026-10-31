@@ -1,0 +1,17 @@
+{
+  "id": "P07",
+  "status": "initialisiert",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/szenarien.json",
+  "format": "json",
+  "expectedRecords": 3,
+  "starter": "src/gesundheit.cjs",
+  "command": "node src/gesundheit.cjs",
+  "implementationTickets": [
+    "P07-T01",
+    "P07-T02",
+    "P07-T03",
+    "P07-T04"
+  ],
+  "language": "de"
+}
