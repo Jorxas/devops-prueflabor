@@ -1,0 +1,46 @@
+{
+  "projekt": "P07",
+  "ticket": "P07-T01",
+  "beginn": "2026-11-01T11:18:34.897Z",
+  "ende": "2026-11-01T11:18:34.931Z",
+  "pruefdauerMillisekunden": 34,
+  "nodeVersion": "v24.13.0",
+  "befehl": "node nachweise/p07-t01-pruefen.cjs",
+  "einstieg": {
+    "befehl": "node src/gesundheit.cjs",
+    "prozessstatus": 0,
+    "ausgabe": "{\n  \"zustand\": \"initialisiert\",\n  \"fachfunktionUmgesetzt\": false\n}\n",
+    "fehlerausgabe": ""
+  },
+  "beispieldatensaetze": 3,
+  "sha256Vorher": "8c5ed1290a16dd789398112eed6f25b12e8f17ba2b5925fcbabb7f75529f9b9a",
+  "sha256Nachher": "8c5ed1290a16dd789398112eed6f25b12e8f17ba2b5925fcbabb7f75529f9b9a",
+  "pruefungen": [
+    {
+      "bezeichnung": "Dienstwahl, Voraussetzung und offener Umsetzungsstand",
+      "bestanden": true
+    },
+    {
+      "bezeichnung": "Lokaler Gesundheitsvertrag und Normalantwort",
+      "bestanden": true
+    },
+    {
+      "bezeichnung": "Genau drei Fehlerfälle mit unterscheidbaren Ergebnissen",
+      "bestanden": true
+    },
+    {
+      "bezeichnung": "Drei Originalbeispiele passen zum Vertrag",
+      "bestanden": true
+    },
+    {
+      "bezeichnung": "Vorhandener Node-Einstieg läuft und meldet nur Initialisierung",
+      "bestanden": true
+    },
+    {
+      "bezeichnung": "Originaldatei vor und nach der Prüfung unverändert",
+      "bestanden": true
+    }
+  ],
+  "bestanden": true,
+  "grenze": "Nur Vertragskonsistenz und Node-Einstieg geprüft; keine HTTP-Anfrage, kein Docker, keine CI, keine laufende P02-API."
+}
