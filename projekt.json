@@ -1,0 +1,61 @@
+{
+  "id": "P07",
+  "status": "gesundheitsvertrag-geprueft",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/szenarien.json",
+  "format": "json",
+  "expectedRecords": 3,
+  "starter": "src/gesundheit.cjs",
+  "command": "node src/gesundheit.cjs",
+  "implementationTickets": [
+    "P07-T01",
+    "P07-T02",
+    "P07-T03",
+    "P07-T04"
+  ],
+  "language": "de",
+  "gesundheitsvertrag": {
+    "stand": "entwurf",
+    "ticket": "P07-T01",
+    "dienst": "P02",
+    "voraussetzung": "P02-T01",
+    "spaetereUmsetzungVoraussetzung": "P02-T03",
+    "methode": "GET",
+    "adresse": "http://127.0.0.1:3000/gesundheit",
+    "zeitlimitMillisekunden": 2000,
+    "inhaltstyp": "application/json; charset=utf-8",
+    "konfiguration": { "DIENST_UMGEBUNG": "lokal" },
+    "diagnoseeingabe": { "umgebung": "lokal" },
+    "normalbetrieb": {
+      "httpStatus": 200,
+      "antwort": { "dienst": "P02", "zustand": "betriebsbereit" },
+      "prozessstatusDiagnose": 0
+    },
+    "fehlerfaelle": [
+      {
+        "id": "fehlende-konfiguration",
+        "ausloeser": "DIENST_UMGEBUNG fehlt oder ist leer",
+        "httpStatus": 503,
+        "antwort": { "dienst": "P02", "zustand": "konfigurationsfehler" },
+        "prozessstatusDiagnose": 1,
+        "wiederherstellung": "DIENST_UMGEBUNG=lokal setzen und Dienst neu starten."
+      },
+      {
+        "id": "ungueltige-eingabe",
+        "ausloeser": "Diagnoseeingabe umgebung fehlt, ist leer oder ungleich lokal",
+        "httpStatus": null,
+        "zustand": "eingabefehler",
+        "prozessstatusDiagnose": 2,
+        "wiederherstellung": "Diagnoseeingabe auf umgebung=lokal korrigieren."
+      },
+      {
+        "id": "dienst-nicht-erreichbar",
+        "ausloeser": "Verbindung abgelehnt oder Zeitlimit von 2000 Millisekunden erreicht",
+        "httpStatus": null,
+        "zustand": "verbindungsfehler",
+        "prozessstatusDiagnose": 3,
+        "wiederherstellung": "Dienststart und lokale Adresse pruefen, danach erneut abfragen."
+      }
+    ]
+  }
+}

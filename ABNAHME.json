@@ -1,0 +1,15 @@
+{
+  "projekt": "P07",
+  "phase": 1,
+  "snapshot": "8aff4ef8b03fb53759a1b77b381514cea6ca88a147fdd72527c3a8c2bbfb143c",
+  "quellcommit": "246c8908da80fa22872caeda276f3832d3949c7c",
+  "lokal_committet_am": "2026-11-02T03:20:46+01:00",
+  "technisch_gesichert_am": "2026-11-01T11:15:56.078Z",
+  "unveraenderlicher_quellstand_geprueft": true,
+  "redaktionell_angepasst": [
+    "START.md",
+    "nachweise/P07-T01-zeit.json"
+  ],
+  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten.",
+  "veroeffentlichungskopie_fachlich_geprueft_am": "2026-11-18T15:21:45.073Z"
+}
