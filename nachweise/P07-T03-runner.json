@@ -1,0 +1,46 @@
+{
+  "zeit": "2026-11-17T18:03:36.889Z",
+  "node": "v24.13.0",
+  "laufort": "win32",
+  "schritte": [
+    {
+      "name": "Syntaxprüfung",
+      "beginn": "2026-11-17T18:03:31.357Z",
+      "ende": "2026-11-17T18:03:31.419Z",
+      "befehl": [
+        "node",
+        "--check",
+        "src/gesundheit.cjs"
+      ],
+      "code": 0,
+      "ausgabe": "",
+      "fehler": ""
+    },
+    {
+      "name": "Echter Imagebau und Normalbetrieb",
+      "beginn": "2026-11-17T18:03:31.421Z",
+      "ende": "2026-11-17T18:03:34.985Z",
+      "befehl": [
+        "node",
+        "nachweise/P07-T02-container-pruefen.cjs"
+      ],
+      "code": 0,
+      "ausgabe": "BESTANDEN: Image wirklich gebaut; eigener Container als Nicht-Root; Gesundheit 200 und echter P02-Datenbankstatus 3/1.\n",
+      "fehler": ""
+    },
+    {
+      "name": "Eingabe- und Konfigurationsfehler",
+      "beginn": "2026-11-17T18:03:34.986Z",
+      "ende": "2026-11-17T18:03:36.889Z",
+      "befehl": [
+        "node",
+        "nachweise/P07-T03-fehler-pruefen.cjs"
+      ],
+      "code": 0,
+      "ausgabe": "BESTANDEN: ungültige Eingabe -> 2; fehlende Konfiguration im echten Container -> HTTP 503, Diagnose 1 und nutzbares Protokoll.\n",
+      "fehler": ""
+    }
+  ],
+  "ergebnis": "bestanden",
+  "grenze": "Echter lokaler Runner; keine Ausführung auf Azure DevOps oder anderer entfernter Plattform."
+}

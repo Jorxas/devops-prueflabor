@@ -1,9 +1,9 @@
 {
-  "zeit": "2026-11-17T17:59:36.328Z",
+  "zeit": "2026-11-17T18:03:34.278Z",
   "dockerServer": "29.2.0",
-  "imageId": "sha256:6551fd45e77c8a4d794a463bb7add265577a99a7a501ca465f804e8afb37e9d5",
-  "container": "epp-p07-pruefung-1794938373211-6b4203",
-  "localhostAdresse": "http://127.0.0.1:51120",
+  "imageId": "sha256:b9f0fac235e42c6a5a64a5bf65dafc4fa89c84494e69c759a1cb47b46d3fe53b",
+  "container": "epp-p07-pruefung-1794938612679-391576",
+  "localhostAdresse": "http://127.0.0.1:60787",
   "benutzer": "10001:10001",
   "gesundheit": {
     "code": 0,

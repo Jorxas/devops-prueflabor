@@ -40,3 +40,11 @@ Wiederholung: `node nachweise/P07-T02-container-pruefen.cjs`. Docker muss für d
 Diagnosecodes: 0 betriebsbereit, 1 fehlerhafte Dienstantwort, 2 ungültige Diagnoseeingabe, 3 Verbindung nicht möglich beziehungsweise Zeitlimit. Bisher in T02 tatsächlich nur Normalbetrieb geprüft; gezielte Fehler und Runner folgen in T03/T04. Kein Cloudbetrieb, Azure-DevOps-Lauf oder Produktivbetrieb behauptet. Studentische Schätzung 90 Minuten, keine separat gemessene Koordinator-Gesamtdauer und keine menschliche Eigenleistung. Dokumentiert 2026-11-17T18:02:35.612Z.
 
 Gelesene Primärquellen: [Docker-Build](https://docs.docker.com/build/building/best-practices/), [Container starten](https://docs.docker.com/engine/containers/run/).
+
+## Lokaler Runner und Fehlerprüfung vom 17. November 2026
+
+P07-T03 lokal geprüft. `node pipeline/lokal.cjs` führt tatsächlich Syntaxprüfung, Imagebau/normalen Containerbetrieb und gezielte Fehlerabnahme nacheinander aus. Ein Fehlercode stoppt den Lauf. Bericht: [ausgeführte Schritte und Ausgaben](nachweise/P07-T03-runner.json). Drei unveränderte synthetische Szenarien bleiben erhalten.
+
+Fehlende Diagnoseumgebung wird vor HTTP mit Code 2 als Eingabefehler abgewiesen. Ein echter Testcontainer ohne DIENST_UMGEBUNG antwortet mit HTTP 503 und Zustand konfigurationsfehler; die Diagnose endet mit Code 1, das Containerprotokoll nennt den Fehler. [Tatsächliche Ergebnisse](nachweise/P07-T03-fehler.json), [Protokoll](nachweise/P07-T03-fehler-protokoll.txt). Keine manipulierte Erfolgsantwort. Nur eigene mit Projekt-/Prüflabel versehene Container werden entfernt.
+
+Die Azure-Pipelines-Datei ist eine nicht veröffentlichte Vorlage. Kein entfernter Runner und keine Azure-DevOps-Erfahrung behauptet. Tatsächlich ausgeführt wurde Node auf Windows mit dem echten lokalen Docker-Linux-Motor. T04 bleibt separat: gezielten Ausfall beobachten und Wiederherstellung wirklich prüfen. Studentische Schätzung 75 Minuten, tatsächliche Gesamtdauer nicht separat gemessen. Dokumentiert 2026-11-17T18:04:51.143Z.

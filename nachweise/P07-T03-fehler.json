@@ -1,0 +1,15 @@
+{
+  "zeit": "2026-11-17T18:03:36.333Z",
+  "ungueltig": {
+    "code": 2,
+    "zustand": "eingabefehler"
+  },
+  "fehlendeEchteContainerkonfiguration": {
+    "code": 1,
+    "dienst": "P02",
+    "zustand": "konfigurationsfehler",
+    "httpStatus": 503
+  },
+  "container": "epp-p07-pruefung-1794938615039-7522f5",
+  "wiederherstellung": "Container mit DIENST_UMGEBUNG=lokal neu starten; in T04 tatsächlich prüfen."
+}

@@ -1,0 +1,11 @@
+# Nicht veröffentlichte Vorlage. Tatsächlich nachgewiesen ist nur pipeline/lokal.cjs.
+trigger: none
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: 24.x
+    displayName: Node-Laufzeit bereitstellen
+  - script: node pipeline/lokal.cjs
+    displayName: Eingaben, Containerbau und lokale Abnahme prüfen

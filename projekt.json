@@ -1,6 +1,6 @@
 {
   "id": "P07",
-  "status": "P07-T02 lokal geprüft: echte Docker-/P02-Ausführung; T03/T04 offen",
+  "status": "P07-T03 lokal geprüft: echter Runner, Eingabe- und Konfigurationsfehler; T04 offen",
   "businessImplemented": false,
   "fixture": "beispieldaten/szenarien.json",
   "format": "json",
