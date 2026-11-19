@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!bereitstellung/
+!bereitstellung/anforderungen.txt
+!bereitstellung/p02/
+!bereitstellung/p02/**
+!src/
+!src/container_api.py
+**/__pycache__
+**/*.pyc

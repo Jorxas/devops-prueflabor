@@ -1,0 +1,32 @@
+{
+  "zeit": "2026-11-17T17:59:36.328Z",
+  "dockerServer": "29.2.0",
+  "imageId": "sha256:6551fd45e77c8a4d794a463bb7add265577a99a7a501ca465f804e8afb37e9d5",
+  "container": "epp-p07-pruefung-1794938373211-6b4203",
+  "localhostAdresse": "http://127.0.0.1:51120",
+  "benutzer": "10001:10001",
+  "gesundheit": {
+    "code": 0,
+    "dienst": "P02",
+    "zustand": "betriebsbereit",
+    "httpStatus": 200
+  },
+  "echterP02Status": {
+    "zustand": "bereit",
+    "ereignisanzahl": 3,
+    "fehleranzahl": 1,
+    "umgebungen": [
+      {
+        "umgebung": "entwicklung",
+        "ereignisanzahl": 2,
+        "fehleranzahl": 0
+      },
+      {
+        "umgebung": "test",
+        "ereignisanzahl": 1,
+        "fehleranzahl": 1
+      }
+    ]
+  },
+  "grenze": "T02 prüft normalen Containerbetrieb; Fehler- und Runnerfälle folgen separat."
+}

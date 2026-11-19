@@ -1,12 +1,12 @@
 {
   "id": "P07",
-  "status": "gesundheitsvertrag-geprueft",
+  "status": "P07-T02 lokal geprüft: echte Docker-/P02-Ausführung; T03/T04 offen",
   "businessImplemented": false,
   "fixture": "beispieldaten/szenarien.json",
   "format": "json",
   "expectedRecords": 3,
   "starter": "src/gesundheit.cjs",
-  "command": "node src/gesundheit.cjs",
+  "command": "node src/gesundheit.cjs lokal",
   "implementationTickets": [
     "P07-T01",
     "P07-T02",
@@ -14,8 +14,15 @@
     "P07-T04"
   ],
   "language": "de",
+  "bereitstellung": {
+    "ticket": "P07-T02",
+    "zustand": "lokal-geprueft",
+    "geprueftAm": "2026-11-17",
+    "pruefbefehl": "node nachweise/P07-T02-container-pruefen.cjs",
+    "nachweis": "nachweise/P07-T02-container.json"
+  },
   "gesundheitsvertrag": {
-    "stand": "entwurf",
+    "stand": "normalbetrieb-ausgefuehrt",
     "ticket": "P07-T01",
     "dienst": "P02",
     "voraussetzung": "P02-T01",
@@ -24,11 +31,18 @@
     "adresse": "http://127.0.0.1:3000/gesundheit",
     "zeitlimitMillisekunden": 2000,
     "inhaltstyp": "application/json; charset=utf-8",
-    "konfiguration": { "DIENST_UMGEBUNG": "lokal" },
-    "diagnoseeingabe": { "umgebung": "lokal" },
+    "konfiguration": {
+      "DIENST_UMGEBUNG": "lokal"
+    },
+    "diagnoseeingabe": {
+      "umgebung": "lokal"
+    },
     "normalbetrieb": {
       "httpStatus": 200,
-      "antwort": { "dienst": "P02", "zustand": "betriebsbereit" },
+      "antwort": {
+        "dienst": "P02",
+        "zustand": "betriebsbereit"
+      },
       "prozessstatusDiagnose": 0
     },
     "fehlerfaelle": [
@@ -36,7 +50,10 @@
         "id": "fehlende-konfiguration",
         "ausloeser": "DIENST_UMGEBUNG fehlt oder ist leer",
         "httpStatus": 503,
-        "antwort": { "dienst": "P02", "zustand": "konfigurationsfehler" },
+        "antwort": {
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler"
+        },
         "prozessstatusDiagnose": 1,
         "wiederherstellung": "DIENST_UMGEBUNG=lokal setzen und Dienst neu starten."
       },

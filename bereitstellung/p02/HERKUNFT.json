@@ -1,0 +1,20 @@
+{
+  "quelle": "P02 / 02-mini-datahub",
+  "commit": "f56fdfc0ae7517b7258909c32cfee91d152dcd33",
+  "uebernommen": "2026-11-17T17:58:13.823Z",
+  "unveraendert": {
+    "beispieldaten/logs.jsonl": {
+      "sha256": "bc447d2b0032611979bf68c3f85abd5cf0ea349e388bf3561a83c8b52f236623"
+    },
+    "sql/schema.sql": {
+      "sha256": "13dfc38d145b0d17e776963fe8c04f0d62db07251d083493e668c787f3fffee2"
+    },
+    "src/api.py": {
+      "sha256": "2d6fa7ed8cccfbae95dc358b6aa57816d5d33f293c90611ddf461fef6c0956c1"
+    },
+    "src/pipeline.py": {
+      "sha256": "0651b2a86a0364f923ac1e7632258bfe36ca5eddaac484a5d3b59c982d756341"
+    }
+  },
+  "grenze": "Nur freigegebene synthetische Beispiele und der kleine echte P02-Kern, keine privaten Daten oder Git-Historie."
+}
