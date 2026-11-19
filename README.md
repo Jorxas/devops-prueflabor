@@ -1,26 +1,46 @@
-# Lokale Bereitstellung und API-Diagnose
+# Lokales DevOps-Prüflabor
 
-Stand: 1. November 2026 — **P07-T01 erledigt: Gesundheitsvertrag und drei Fehlerfälle für den späteren Dienst P02 lokal geprüft; Fachfunktionen offen**. Geplanter Abschluss der Basis: 2026-11-06, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Ein Dienst soll reproduzierbar gebaut und gestartet werden; Gesundheitsprüfung, Konfigurationsfehler und Wiederherstellung müssen beobachtbar sein.
 
-Ein Team möchte einen Dienst reproduzierbar starten und Fehler schnell nachvollziehen.
+![Projektaufbau](dokumentation/ueberblick.svg)
 
-Geplantes Gesamtergebnis: Lokaler Container, beschriebene Pipeline, Diagnose und ein Fehlerszenario für P02.
+**Veröffentlichungsstand: Phase 1/4.** Dieses eigenständige Repository übernimmt zunächst den bereits lokal committeten Stand. Weitere fachliche Phasen werden im Abstand von mindestens vier Stunden veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
 
-Jetzt vorhanden: Gesundheitsvertrag in `projekt.json`, drei festgelegte Fehlerfälle und ein reproduzierbarer lokaler Konsistenzcheck. Der bestehende Node-Einstieg meldet weiterhin den Initialisierungsstand. [Startanleitung](START.md) und [Prüfbericht](nachweise/P07-T01-pruefung.json) erklären Ausführung und Grenzen. Keine laufende DataHub-API, kein Docker- oder CI-Ausführungsnachweis; Lastenheft A1 bis A4 bleiben offen.
+## Was hier zu sehen ist
 
-Vorgesehene Technologien: Docker, CI/CD, Git, Linux, Tests/QA, Security/GRC, Azure DevOps. Eine Nennung ist kein Nachweis einer Umsetzung.
+| Schritt | Inhalt | Hier veröffentlicht |
+|---|---|---|
+| 1 | Gesundheitsvertrag und Szenarien | Ja |
+| 2 | Docker-Imagebau mit Mini-DataHub | Folgt |
+| 3 | Lokaler Runner und Fehlerfälle | Folgt |
+| 4 | Ausfall, Neustart und Wiederherstellung | Folgt |
 
-## Einstieg
+## Fachlicher Nutzen
 
-1. [Lastenheft](LASTENHEFT.md) lesen.
-2. [Erstes Ticket](tickets/P07-T01.md) öffnen.
-3. [Technischen Einstieg](START.md) prüfen und ein Ticket nach dem anderen bearbeiten.
-4. [Arbeitsjournal](ARBEITSJOURNAL.md) und echte Nachweise aktualisieren.
+Containerisierung, automatisierte lokale Prüfungen und Fehlerdiagnose.
 
-Abhängigkeiten: Für P07-T01 genügt das geprüfte P02-T01; die spätere Umsetzung P07-T02 benötigt zusätzlich P02-T03.
+## Lokal starten
 
-[Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
+Im geklonten Repository ausführen; die benötigte Laufzeit muss installiert sein. Python-Beispiele verwenden 3.12, Node-Beispiele 24 und C# die im Projekt angegebene .NET-Version. Befehle mit uv laden die dort genau bezeichneten Pakete bei Bedarf.
 
-## Projektsprache
+```powershell
+node nachweise/p07-t01-pruefen.cjs
+```
 
-Dokumentation, selbst gewählte Bezeichner, Kommentare, Meldungen und Beispieldaten werden auf Deutsch geschrieben. Festgelegte API-Schlüssel, Sprachsyntax und Produktnamen bleiben unverändert.
+Ausführliche technische Befehle: [START.md](START.md). [Öffentlicher Prüfstand](ABNAHME.json) und [Quellphasen](VERLAUF.json) dokumentieren Herkunft und echte Ausführungsdaten. Eine neue Repositorykopie ist kein neuer nativer Desktoplauf.
+
+## Ergebnis des lokal geprüften Schlussstands
+
+Echter Imagebau, HTTP-503-Fehler, Konfigurationsfehler sowie Stoppen und Wiederherstellen geprüft.
+
+**Dieser Schlussstand ist lokal bereits geprüft, aber noch nicht vollständig in diesem Repository veröffentlicht.** Maßgeblich für den hier verfügbaren Code ist die Phasentabelle oben.
+
+## Grenzen
+
+Keine AWS-/Azure-Ausführung und keine entfernte CI-Plattform. Ab Phase 2 wird das separat veröffentlichte Mini-DataHub als dokumentierte Dienstabhängigkeit benötigt.
+
+Eigenes kleines Lernprojekt mit synthetischen Daten, mit KI-Unterstützung entwickelt und geprüft. Keine Aussage über Berufserfahrung, menschliche Arbeitsstunden oder praktische Verwendung weiterer nur geplanter Produkte.
+
+## Entwicklungshistorie
+
+[Entwicklungshistorie](HISTORIE.md): die vorhandenen lokalen Änderungen, ihre ursprünglichen Daten und die spätere GitHub-Übernahme.
