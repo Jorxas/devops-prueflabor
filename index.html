@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>DevOps-Prüflabor Demo</title>
+<meta name="description" content="Echter Lauf des Projekts: Docker-Image bauen, Dienst mit vier Konfigurationen starten, Gesundheit prüfen, stoppen und neu starten.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<a class="skip" href="#demo" data-i18n="skip">Zur Demo springen</a>
+<header class="kopf">
+  <div class="kopf-innen">
+    <div>
+      <p class="mikro"><span data-i18n="mikro">Lernprojekt</span> · <a href="https://github.com/Jorxas/devops-prueflabor" data-i18n="code">Code auf GitHub</a></p>
+      <h1 data-i18n="titel">Lokales DevOps-Prüflabor</h1>
+      <p class="unter" data-i18n="unter">Ein Dienst muss auch Fehler erklären: gebaut, gestartet, geprüft, gestoppt und wieder gestartet.</p>
+    </div>
+    <div class="sprache" role="group" aria-label="Sprache / Langue">
+      <button type="button" data-lang="de" aria-pressed="true">DE</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="vier" aria-labelledby="kurz-h">
+    <h2 id="kurz-h" class="nur-sr" data-i18n="kurz">Kurz erklärt</h2>
+    <article><h3 data-i18n="aufgabe_h">Aufgabe</h3><p data-i18n="aufgabe_t"></p></article>
+    <article><h3 data-i18n="daten_h">Daten</h3><p data-i18n="daten_t"></p></article>
+    <article><h3 data-i18n="ergebnis_h">Ergebnis</h3><p data-i18n="ergebnis_t"></p></article>
+    <article><h3 data-i18n="grenzen_h">Grenzen</h3><p data-i18n="grenzen_t"></p></article>
+  </section>
+
+  <section id="demo" aria-labelledby="demo-h">
+    <h2 id="demo-h" data-i18n="demo_h">Anwendungsfall: Dienst starten und seinen Zustand prüfen</h2>
+    <p class="echt" id="echt"></p>
+    <p id="lade" role="status" data-i18n="lade">Lade die gespeicherte Ausgabe …</p>
+    <div id="inhalt" hidden>
+      <div class="schritt">
+        <h3><span class="nr">1</span> <span data-i18n="s1_h">Konfiguration wählen</span></h3>
+        <p class="hilfe" data-i18n="s1_t">Der Dienst liest die Umgebungsvariable DIENST_UMGEBUNG. Jede Auswahl entspricht einem eigenen, wirklich gestarteten Container.</p>
+        <div class="optionen" role="radiogroup" aria-labelledby="s1-label" id="varianten"></div>
+        <p class="nur-sr" id="s1-label" data-i18n="s1_label">Konfigurationsvariante</p>
+        <p class="befehl-zeile"><span data-i18n="startbefehl">Startbefehl</span>: <code id="startbefehl"></code></p>
+      </div>
+
+      <div class="schritt">
+        <h3><span class="nr">2</span> <span data-i18n="s2_h">Zustand mit der Diagnose des Projekts abfragen</span></h3>
+        <div class="tabs" role="tablist" aria-label="Phase" id="phasen"></div>
+        <div id="phase" role="tabpanel" tabindex="0" class="panel" aria-live="polite"></div>
+      </div>
+
+      <div class="schritt">
+        <h3><span class="nr">3</span> <span data-i18n="s3_h">Weitere echte Ausgaben</span></h3>
+        <details open><summary data-i18n="d_status">Ereignisse im Dienst (HTTP-Abfrage /ereignisse?umgebung=test)</summary><div id="ereignisse"></div></details>
+        <details><summary data-i18n="d_status_roh">Zusammenfassung des Dienstes (HTTP-Abfrage /status)</summary><pre id="statusroh" tabindex="0"></pre></details>
+        <details><summary data-i18n="d_log">Containerprotokoll dieses Laufs</summary><pre id="log" tabindex="0"></pre></details>
+        <details><summary data-i18n="d_build">Protokoll des Imagebaus (docker build)</summary><pre id="bau" tabindex="0"></pre></details>
+        <details><summary data-i18n="d_docker">Dockerfile des Projekts (Eingabe des Baus)</summary><pre id="dockerfile" tabindex="0"></pre></details>
+      </div>
+    </div>
+    <p id="fehler" role="alert" hidden></p>
+  </section>
+
+  <section class="nachweis" aria-labelledby="nw-h">
+    <h2 id="nw-h" data-i18n="nw_h">Was wirklich ausgeführt wurde</h2>
+    <ul id="nw"></ul>
+  </section>
+</main>
+<footer><p data-i18n="fuss">Eigenes Lernprojekt, mit KI-Unterstützung entwickelt und geprüft. Alle Daten sind synthetisch.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
