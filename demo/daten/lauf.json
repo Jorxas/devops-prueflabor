@@ -1,0 +1,430 @@
+{
+  "erzeugt": "2026-11-23T08:58:40.208Z",
+  "node": "v24.13.0",
+  "docker": "29.2.0",
+  "laufzeitsystem": "win32",
+  "imageId": "sha256:f55f8c399b7e27089cba820576ca1559d368af2412cca2bde934ac975e61613a",
+  "benutzer": "10001:10001",
+  "varianten": [
+    {
+      "id": "lokal",
+      "beschriftung": "DIENST_UMGEBUNG=lokal",
+      "startbefehl": "docker run -d --cpus 1 --memory 256m -p 127.0.0.1::3000 -e DIENST_UMGEBUNG=lokal devops-prueflabor-demo:lokal",
+      "laeuft": {
+        "port": "51270",
+        "diagnose": {
+          "code": 0,
+          "dienst": "P02",
+          "zustand": "betriebsbereit",
+          "httpStatus": 200
+        },
+        "diagnoseLeereEingabe": {
+          "code": 2,
+          "zustand": "eingabefehler"
+        },
+        "gesundheit": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "betriebsbereit"
+          }
+        },
+        "status": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "zustand": "bereit",
+            "ereignisanzahl": 3,
+            "fehleranzahl": 1,
+            "umgebungen": [
+              {
+                "umgebung": "entwicklung",
+                "ereignisanzahl": 2,
+                "fehleranzahl": 0
+              },
+              {
+                "umgebung": "test",
+                "ereignisanzahl": 1,
+                "fehleranzahl": 1
+              }
+            ]
+          }
+        },
+        "ereignisse": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1,
+            "ereignisse": [
+              {
+                "ereignis_id": "e2",
+                "zeitpunkt": "2026-10-01T09:01:00Z",
+                "umgebung": "test",
+                "stufe": "ERROR",
+                "nachricht": "Verbindung abgelehnt",
+                "ist_zeitueberschreitung": 0
+              }
+            ]
+          }
+        },
+        "containerprotokoll": [
+          "{\"ereignis\": \"synthetischer_import\", \"eingefuegt\": 3, \"eingabefehler\": 1}",
+          "{\"zeit\": \"2026-11-23T08:58:41.855824+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"betriebsbereit\", \"httpStatus\": 200}",
+          "INFO:     172.17.0.1:35138 - \"GET /gesundheit HTTP/1.1\" 200 OK",
+          "{\"zeit\": \"2026-11-23T08:58:41.861839+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"betriebsbereit\", \"httpStatus\": 200}",
+          "INFO:     172.17.0.1:35140 - \"GET /gesundheit HTTP/1.1\" 200 OK",
+          "{\"zeit\": \"2026-11-23T08:58:41.864835+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"betriebsbereit\", \"httpStatus\": 200}",
+          "INFO:     172.17.0.1:35138 - \"GET /gesundheit HTTP/1.1\" 200 OK",
+          "INFO:     172.17.0.1:35140 - \"GET /status HTTP/1.1\" 200 OK",
+          "INFO:     172.17.0.1:35138 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK",
+          "INFO:     Started server process [1]",
+          "INFO:     Waiting for application startup.",
+          "INFO:     Application startup complete.",
+          "INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)"
+        ]
+      },
+      "gestoppt": {
+        "diagnose": {
+          "code": 3,
+          "zustand": "verbindungsfehler",
+          "fehler": "TypeError"
+        }
+      },
+      "neuGestartet": {
+        "port": "51277",
+        "diagnose": {
+          "code": 0,
+          "dienst": "P02",
+          "zustand": "betriebsbereit",
+          "httpStatus": 200
+        },
+        "gesundheit": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "betriebsbereit"
+          }
+        }
+      }
+    },
+    {
+      "id": "fehlt",
+      "beschriftung": "DIENST_UMGEBUNG nicht gesetzt",
+      "startbefehl": "docker run -d --cpus 1 --memory 256m -p 127.0.0.1::3000  devops-prueflabor-demo:lokal",
+      "laeuft": {
+        "port": "54384",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "diagnoseLeereEingabe": {
+          "code": 2,
+          "zustand": "eingabefehler"
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        },
+        "status": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "zustand": "bereit",
+            "ereignisanzahl": 3,
+            "fehleranzahl": 1,
+            "umgebungen": [
+              {
+                "umgebung": "entwicklung",
+                "ereignisanzahl": 2,
+                "fehleranzahl": 0
+              },
+              {
+                "umgebung": "test",
+                "ereignisanzahl": 1,
+                "fehleranzahl": 1
+              }
+            ]
+          }
+        },
+        "ereignisse": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1,
+            "ereignisse": [
+              {
+                "ereignis_id": "e2",
+                "zeitpunkt": "2026-10-01T09:01:00Z",
+                "umgebung": "test",
+                "stufe": "ERROR",
+                "nachricht": "Verbindung abgelehnt",
+                "ist_zeitueberschreitung": 0
+              }
+            ]
+          }
+        },
+        "containerprotokoll": [
+          "{\"ereignis\": \"synthetischer_import\", \"eingefuegt\": 3, \"eingabefehler\": 1}",
+          "{\"zeit\": \"2026-11-23T08:58:45.236830+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:35260 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:45.240014+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:35264 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:45.241980+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:35260 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "INFO:     172.17.0.1:35264 - \"GET /status HTTP/1.1\" 200 OK",
+          "INFO:     172.17.0.1:35260 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK",
+          "INFO:     Started server process [1]",
+          "INFO:     Waiting for application startup.",
+          "INFO:     Application startup complete.",
+          "INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)"
+        ]
+      },
+      "gestoppt": {
+        "diagnose": {
+          "code": 3,
+          "zustand": "verbindungsfehler",
+          "fehler": "TypeError"
+        }
+      },
+      "neuGestartet": {
+        "port": "54392",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        }
+      }
+    },
+    {
+      "id": "leer",
+      "beschriftung": "DIENST_UMGEBUNG leer",
+      "startbefehl": "docker run -d --cpus 1 --memory 256m -p 127.0.0.1::3000 -e DIENST_UMGEBUNG= devops-prueflabor-demo:lokal",
+      "laeuft": {
+        "port": "53339",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "diagnoseLeereEingabe": {
+          "code": 2,
+          "zustand": "eingabefehler"
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        },
+        "status": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "zustand": "bereit",
+            "ereignisanzahl": 3,
+            "fehleranzahl": 1,
+            "umgebungen": [
+              {
+                "umgebung": "entwicklung",
+                "ereignisanzahl": 2,
+                "fehleranzahl": 0
+              },
+              {
+                "umgebung": "test",
+                "ereignisanzahl": 1,
+                "fehleranzahl": 1
+              }
+            ]
+          }
+        },
+        "ereignisse": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1,
+            "ereignisse": [
+              {
+                "ereignis_id": "e2",
+                "zeitpunkt": "2026-10-01T09:01:00Z",
+                "umgebung": "test",
+                "stufe": "ERROR",
+                "nachricht": "Verbindung abgelehnt",
+                "ist_zeitueberschreitung": 0
+              }
+            ]
+          }
+        },
+        "containerprotokoll": [
+          "{\"ereignis\": \"synthetischer_import\", \"eingefuegt\": 3, \"eingabefehler\": 1}",
+          "{\"zeit\": \"2026-11-23T08:58:48.616533+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53508 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:48.619300+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53516 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:48.621760+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53508 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "INFO:     172.17.0.1:53516 - \"GET /status HTTP/1.1\" 200 OK",
+          "INFO:     172.17.0.1:53508 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK",
+          "INFO:     Started server process [1]",
+          "INFO:     Waiting for application startup.",
+          "INFO:     Application startup complete.",
+          "INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)"
+        ]
+      },
+      "gestoppt": {
+        "diagnose": {
+          "code": 3,
+          "zustand": "verbindungsfehler",
+          "fehler": "TypeError"
+        }
+      },
+      "neuGestartet": {
+        "port": "55940",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        }
+      }
+    },
+    {
+      "id": "produktion",
+      "beschriftung": "DIENST_UMGEBUNG=produktion",
+      "startbefehl": "docker run -d --cpus 1 --memory 256m -p 127.0.0.1::3000 -e DIENST_UMGEBUNG=produktion devops-prueflabor-demo:lokal",
+      "laeuft": {
+        "port": "63204",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "diagnoseLeereEingabe": {
+          "code": 2,
+          "zustand": "eingabefehler"
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        },
+        "status": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "zustand": "bereit",
+            "ereignisanzahl": 3,
+            "fehleranzahl": 1,
+            "umgebungen": [
+              {
+                "umgebung": "entwicklung",
+                "ereignisanzahl": 2,
+                "fehleranzahl": 0
+              },
+              {
+                "umgebung": "test",
+                "ereignisanzahl": 1,
+                "fehleranzahl": 1
+              }
+            ]
+          }
+        },
+        "ereignisse": {
+          "httpStatus": 200,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1,
+            "ereignisse": [
+              {
+                "ereignis_id": "e2",
+                "zeitpunkt": "2026-10-01T09:01:00Z",
+                "umgebung": "test",
+                "stufe": "ERROR",
+                "nachricht": "Verbindung abgelehnt",
+                "ist_zeitueberschreitung": 0
+              }
+            ]
+          }
+        },
+        "containerprotokoll": [
+          "{\"ereignis\": \"synthetischer_import\", \"eingefuegt\": 3, \"eingabefehler\": 1}",
+          "{\"zeit\": \"2026-11-23T08:58:52.910768+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53628 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:52.918112+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53644 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "{\"zeit\": \"2026-11-23T08:58:52.921418+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}",
+          "INFO:     172.17.0.1:53628 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable",
+          "INFO:     172.17.0.1:53644 - \"GET /status HTTP/1.1\" 200 OK",
+          "INFO:     172.17.0.1:53628 - \"GET /ereignisse?umgebung=test HTTP/1.1\" 200 OK",
+          "INFO:     Started server process [1]",
+          "INFO:     Waiting for application startup.",
+          "INFO:     Application startup complete.",
+          "INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)"
+        ]
+      },
+      "gestoppt": {
+        "diagnose": {
+          "code": 3,
+          "zustand": "verbindungsfehler",
+          "fehler": "TypeError"
+        }
+      },
+      "neuGestartet": {
+        "port": "58312",
+        "diagnose": {
+          "code": 1,
+          "dienst": "P02",
+          "zustand": "konfigurationsfehler",
+          "httpStatus": 503
+        },
+        "gesundheit": {
+          "httpStatus": 503,
+          "inhaltstyp": "application/json",
+          "koerper": {
+            "dienst": "P02",
+            "zustand": "konfigurationsfehler"
+          }
+        }
+      }
+    }
+  ]
+}

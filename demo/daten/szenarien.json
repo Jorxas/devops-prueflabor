@@ -1,0 +1,19 @@
+[
+  {
+    "id": "normalbetrieb",
+    "konfiguration": "gueltig",
+    "erwartet": "betriebsbereit"
+  },
+  {
+    "id": "fehlende-konfiguration",
+    "konfiguration": null,
+    "erwartet": "konfigurationsfehler"
+  },
+  {
+    "id": "ungueltige-eingabe",
+    "anfrage": {
+      "umgebung": ""
+    },
+    "erwartet": "eingabefehler"
+  }
+]

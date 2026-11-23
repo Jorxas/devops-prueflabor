@@ -31,6 +31,20 @@ node pipeline/lokal.cjs
 
 Ausführliche technische Befehle: [START.md](START.md). [Öffentlicher Prüfstand](ABNAHME.json) und [Quellphasen](VERLAUF.json) dokumentieren Herkunft und echte Ausführungsdaten. Eine neue Repositorykopie ist kein neuer nativer Desktoplauf.
 
+## Demo
+
+Live: https://jorxas.github.io/devops-prueflabor/ (Deutsch, per Schalter DE | FR auch Französisch)
+
+Die Demo zeigt einen Anwendungsfall mit der Ausgabe eines echten Laufs: Das Projekt-Dockerfile wird gebaut, der Dienst mit vier Konfigurationen von `DIENST_UMGEBUNG` als Container gestartet, mit `src/gesundheit.cjs` abgefragt, gestoppt und wieder gestartet. Die Seite selbst startet keine Container; sie zeigt die gespeicherten Ausgaben aus `demo/daten/`. Stoppen und Neustart führt das Demo-Skript aus, nicht eine veröffentlichte Projektphase.
+
+Neu erzeugen (benötigt Docker mit Linux-Containern, Node 24 und beim ersten Bau Internet):
+
+```powershell
+node demo/erzeugen.cjs
+```
+
+Browserprüfung der Seite (benötigt `puppeteer-core` und einen installierten Chrome oder Edge): `node tools/browser-pruefen.cjs`. Die Veröffentlichung erfolgt aus `demo/` auf den Zweig `gh-pages`.
+
 ## Ergebnis des lokal geprüften Schlussstands
 
 Echter Imagebau, HTTP-503-Fehler, Konfigurationsfehler sowie Stoppen und Wiederherstellen geprüft.

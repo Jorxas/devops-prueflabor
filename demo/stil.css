@@ -1,0 +1,93 @@
+:root {
+  --bg: #f6f7f9; --karte: #ffffff; --text: #1b2430; --leise: #5a6677; --linie: #dde2ea;
+  --akzent: #2f5d8a; --akzent-hell: #e8f0f8; --gut: #1c7a45; --gut-hell: #e3f4ea;
+  --warn: #9a5b00; --warn-hell: #fdf0d9; --schlecht: #b3261e; --schlecht-hell: #fbe7e5;
+  --code: #f0f2f6;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--akzent); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible + .opt, [tabindex]:focus-visible {
+  outline: 3px solid #1a73e8; outline-offset: 2px;
+}
+.skip { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 12px; z-index: 5; }
+.skip:focus { left: 8px; top: 8px; }
+.nur-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.kopf { background: var(--karte); border-bottom: 1px solid var(--linie); }
+.kopf-innen { max-width: 980px; margin: 0 auto; padding: 20px 16px; display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; }
+.mikro { margin: 0 0 4px; font-size: 13px; color: var(--leise); text-transform: uppercase; letter-spacing: .04em; }
+h1 { margin: 0 0 6px; font-size: clamp(1.5rem, 5vw, 2.1rem); line-height: 1.2; }
+.unter { margin: 0; color: var(--leise); max-width: 60ch; }
+.sprache { display: flex; border: 1px solid var(--linie); border-radius: 8px; overflow: hidden; flex: none; }
+.sprache button {
+  border: 0; background: var(--karte); color: var(--text); padding: 8px 14px; min-height: 40px; font: inherit; font-weight: 600; cursor: pointer;
+}
+.sprache button[aria-pressed="true"] { background: var(--akzent); color: #fff; }
+main { max-width: 980px; margin: 0 auto; padding: 20px 16px 8px; }
+h2 { font-size: 1.3rem; margin: 28px 0 10px; }
+h3 { font-size: 1.05rem; margin: 0 0 6px; }
+.vier { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.vier article { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; padding: 14px 16px; }
+.vier p { margin: 0; font-size: .95rem; color: #2c3644; }
+.echt {
+  display: inline-block; margin: 0 0 12px; padding: 8px 12px; background: var(--akzent-hell); border: 1px solid #c4d7ea;
+  border-radius: 8px; font-size: .92rem;
+}
+.echt strong { color: var(--akzent); }
+.schritt { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 16px; margin: 0 0 14px; }
+.nr {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--akzent); color: #fff;
+  font-size: .85rem; margin-right: 4px;
+}
+.hilfe { margin: 0 0 10px; color: var(--leise); font-size: .93rem; }
+.optionen { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.optionen label { display: block; cursor: pointer; }
+.optionen input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.opt { display: block; border: 2px solid var(--linie); border-radius: 10px; padding: 10px 12px; background: #fff; height: 100%; }
+.optionen input:checked + .opt { border-color: var(--akzent); background: var(--akzent-hell); }
+.opt code { display: block; font-size: .88rem; word-break: break-all; }
+.opt small { color: var(--leise); }
+code, pre { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .88em; overflow-wrap: anywhere; }
+.opt code { background: transparent; padding: 0; font-weight: 600; }
+pre {
+  background: #111a26; color: #e6edf6; padding: 12px; border-radius: 8px; overflow: auto; max-height: 340px; margin: 8px 0 0;
+  font-size: .82rem; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.befehl-zeile { margin: 10px 0 0; font-size: .92rem; color: var(--leise); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tabs button {
+  border: 1px solid var(--linie); background: #fff; border-radius: 8px; padding: 8px 12px; min-height: 40px; font: inherit; cursor: pointer; color: var(--text);
+}
+.tabs button[aria-selected="true"] { background: var(--akzent); color: #fff; border-color: var(--akzent); }
+.panel { border-top: 1px solid var(--linie); padding-top: 12px; }
+.pille { display: inline-block; padding: 3px 10px; border-radius: 99px; font-weight: 700; font-size: .9rem; }
+.pille.gut { background: var(--gut-hell); color: var(--gut); }
+.pille.warn { background: var(--warn-hell); color: var(--warn); }
+.pille.schlecht { background: var(--schlecht-hell); color: var(--schlecht); }
+.erklaerung { margin: 8px 0; }
+.raster { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 8px; }
+.raster h4 { margin: 0 0 2px; font-size: .88rem; color: var(--leise); font-weight: 600; }
+.klein { font-size: .88rem; color: var(--leise); margin: 10px 0 0; }
+details { border-top: 1px solid var(--linie); padding: 8px 0; }
+summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+.tabellenrahmen { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+th { color: var(--leise); font-weight: 600; white-space: nowrap; }
+.nachweis ul { padding-left: 20px; margin: 0; }
+.nachweis li { margin: 0 0 6px; }
+footer { max-width: 980px; margin: 0 auto; padding: 8px 16px 32px; color: var(--leise); font-size: .9rem; }
+#fehler { background: var(--schlecht-hell); color: var(--schlecht); padding: 10px 12px; border-radius: 8px; }
+@media (max-width: 520px) {
+  .kopf-innen { flex-direction: column-reverse; align-items: stretch; }
+  .sprache { align-self: flex-end; }
+  .schritt { padding: 12px; }
+  .tabs button { flex: 1 1 100%; text-align: left; }
+}
+@media (prefers-reduced-motion: no-preference) { .opt { transition: border-color .15s, background .15s; } }
