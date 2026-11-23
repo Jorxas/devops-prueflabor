@@ -4,7 +4,7 @@ Ein Dienst soll reproduzierbar gebaut und gestartet werden; Gesundheitsprüfung,
 
 ![Projektaufbau](dokumentation/ueberblick.svg)
 
-**Veröffentlichungsstand: Phase 3/4.** Dieses eigenständige Repository übernimmt zunächst den bereits lokal committeten Stand. Weitere fachliche Phasen werden im Abstand von mindestens vier Stunden veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
+**Veröffentlichungsstand: Phase 4/4.** Dieses eigenständige Repository veröffentlicht zuvor lokal entwickelte, geprüfte und unveränderlich gesicherte Stände. Alle vier dokumentierten Basisphasen sind veröffentlicht. Die technische Entwicklung und die öffentliche Veröffentlichung haben unterschiedliche echte Zeitpunkte.
 
 ## Was hier zu sehen ist
 
@@ -13,7 +13,7 @@ Ein Dienst soll reproduzierbar gebaut und gestartet werden; Gesundheitsprüfung,
 | 1 | Gesundheitsvertrag und Szenarien | Ja |
 | 2 | Docker-Imagebau mit Mini-DataHub | Ja |
 | 3 | Lokaler Runner und Fehlerfälle | Ja |
-| 4 | Ausfall, Neustart und Wiederherstellung | Folgt |
+| 4 | Ausfall, Neustart und Wiederherstellung | Ja |
 
 ## Fachlicher Nutzen
 
@@ -26,7 +26,7 @@ Im geklonten Repository ausführen; die benötigte Laufzeit muss installiert sei
 ```powershell
 git clone https://github.com/Jorxas/mini-datahub-api.git ../02-mini-datahub
 node nachweise/p07-t01-pruefen.cjs
-node pipeline/lokal.cjs
+node pipeline/lokal.cjs --gesamt
 ```
 
 Ausführliche technische Befehle: [START.md](START.md). [Öffentlicher Prüfstand](ABNAHME.json) und [Quellphasen](VERLAUF.json) dokumentieren Herkunft und echte Ausführungsdaten. Eine neue Repositorykopie ist kein neuer nativer Desktoplauf.
@@ -48,8 +48,6 @@ Browserprüfung der Seite (benötigt `puppeteer-core` und einen installierten Ch
 ## Ergebnis des lokal geprüften Schlussstands
 
 Echter Imagebau, HTTP-503-Fehler, Konfigurationsfehler sowie Stoppen und Wiederherstellen geprüft.
-
-**Dieser Schlussstand ist lokal bereits geprüft, aber noch nicht vollständig in diesem Repository veröffentlicht.** Maßgeblich für den hier verfügbaren Code ist die Phasentabelle oben.
 
 ## Grenzen
 

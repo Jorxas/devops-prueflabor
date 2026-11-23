@@ -1,14 +1,15 @@
 {
   "projekt": "P07",
-  "phase": 3,
-  "snapshot": "6067e9f3991a5e26a29e0c38625b4045d943dac4af4070100c49bbacbbc7aa90",
-  "quellcommit": "b6feb3ce6a774f963c8d9166071c247f4571ab61",
-  "lokal_committet_am": "2026-11-19T13:27:02+01:00",
-  "technisch_gesichert_am": "2026-11-17T18:02:36.717Z",
+  "phase": 4,
+  "snapshot": "f0e11519030828756cf06c5e11fee3196151f167617d62ae82dc22fb166532df",
+  "quellcommit": null,
+  "lokal_committet_am": null,
+  "technisch_gesichert_am": "2026-11-17T22:31:34.633Z",
   "unveraenderlicher_quellstand_geprueft": true,
   "redaktionell_angepasst": [
     "START.md",
     "nachweise/P07-T01-zeit.json"
   ],
-  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten."
+  "hinweis": "Bereits zuvor entwickelte und geprüfte Phase; diese GitHub-Veröffentlichung hat ihr tatsächliches neues Datum. Kein historischer Git-Commit oder menschlicher Zeitaufwand erfunden.",
+  "quellart": "gepruefter-unveraenderlicher-snapshot"
 }

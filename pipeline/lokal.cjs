@@ -11,11 +11,13 @@ const ergebnisse=[];
 const schritte=[['Syntaxprüfung','--check','src/gesundheit.cjs'],
  ['Echter Imagebau und Normalbetrieb','nachweise/P07-T02-container-pruefen.cjs'],
  ['Eingabe- und Konfigurationsfehler','nachweise/P07-T03-fehler-pruefen.cjs']];
+const gesamtabnahme=process.argv.includes('--gesamt');
+if(gesamtabnahme)schritte.push(['Echter Ausfall und Wiederherstellung','nachweise/P07-T04-wiederherstellung.cjs']);
 for(const [name,...argumente] of schritte){
   const beginn=new Date().toISOString();
   const lauf=spawnSync(process.execPath,argumente,{cwd:projekt,encoding:'utf8',windowsHide:true,timeout:420000,maxBuffer:8*1024*1024});
   ergebnisse.push({name,beginn,ende:new Date().toISOString(),befehl:['node',...argumente],code:lauf.status,ausgabe:lauf.stdout,fehler:lauf.stderr});
-  fs.writeFileSync(path.join(projekt,'nachweise/P07-T03-runner.json'),JSON.stringify({zeit:new Date().toISOString(),node:process.version,
+  fs.writeFileSync(path.join(projekt,gesamtabnahme?'nachweise/P07-T04-runner.json':'nachweise/P07-T03-runner.json'),JSON.stringify({zeit:new Date().toISOString(),node:process.version,
     laufort:process.platform,schritte:ergebnisse,ergebnis:lauf.status===0&&ergebnisse.length===schritte.length?'bestanden':'noch-nicht-bestanden',
     grenze:'Echter lokaler Runner; keine Ausführung auf Azure DevOps oder anderer entfernter Plattform.'},null,2)+'\n');
   if(lauf.status!==0){console.error(lauf.stderr||lauf.stdout);process.exit(lauf.status||1);}

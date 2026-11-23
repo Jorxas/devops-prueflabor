@@ -1,7 +1,7 @@
 {
   "id": "P07",
-  "status": "P07-T03 lokal geprüft: echter Runner, Eingabe- und Konfigurationsfehler; T04 offen",
-  "businessImplemented": false,
+  "status": "Basis und Lastenheft lokal geprüft: echter lokaler Container-/Runnerbetrieb",
+  "businessImplemented": true,
   "fixture": "beispieldaten/szenarien.json",
   "format": "json",
   "expectedRecords": 3,
@@ -22,7 +22,7 @@
     "nachweis": "nachweise/P07-T02-container.json"
   },
   "gesundheitsvertrag": {
-    "stand": "normalbetrieb-ausgefuehrt",
+    "stand": "normalbetrieb-und-fehler-ausgefuehrt",
     "ticket": "P07-T01",
     "dienst": "P02",
     "voraussetzung": "P02-T01",
@@ -74,5 +74,6 @@
         "wiederherstellung": "Dienststart und lokale Adresse pruefen, danach erneut abfragen."
       }
     ]
-  }
+  },
+  "gesamtabnahme": "node pipeline/lokal.cjs --gesamt"
 }

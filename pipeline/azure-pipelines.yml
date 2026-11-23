@@ -7,5 +7,5 @@ steps:
     inputs:
       versionSpec: 24.x
     displayName: Node-Laufzeit bereitstellen
-  - script: node pipeline/lokal.cjs
+  - script: node pipeline/lokal.cjs --gesamt
     displayName: Eingaben, Containerbau und lokale Abnahme prüfen

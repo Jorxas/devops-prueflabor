@@ -1,5 +1,5 @@
 {
-  "zeit": "2026-11-17T18:03:36.333Z",
+  "zeit": "2026-11-17T18:05:53.971Z",
   "ungueltig": {
     "code": 2,
     "zustand": "eingabefehler"
@@ -10,6 +10,6 @@
     "zustand": "konfigurationsfehler",
     "httpStatus": 503
   },
-  "container": "epp-p07-pruefung-1794938615039-7522f5",
+  "container": "epp-p07-pruefung-1794938752437-cd6840",
   "wiederherstellung": "Container mit DIENST_UMGEBUNG=lokal neu starten; in T04 tatsächlich prüfen."
 }

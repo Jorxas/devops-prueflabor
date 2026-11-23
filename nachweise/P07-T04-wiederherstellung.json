@@ -1,0 +1,60 @@
+{
+  "zeit": "2026-11-17T18:05:59.720Z",
+  "ergebnis": "bestanden",
+  "schritte": [
+    {
+      "fall": "Fehlende Konfiguration",
+      "ergebnis": {
+        "code": 1,
+        "dienst": "P02",
+        "zustand": "konfigurationsfehler",
+        "httpStatus": 503
+      },
+      "protokoll": "{\"ereignis\": \"synthetischer_import\", \"eingefuegt\": 3, \"eingabefehler\": 1}\n{\"zeit\": \"2026-11-17T18:05:55.699760+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}\nINFO:     172.17.0.1:46940 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable\n{\"zeit\": \"2026-11-17T18:05:55.707911+00:00\", \"ereignis\": \"gesundheitspruefung\", \"zustand\": \"konfigurationsfehler\", \"httpStatus\": 503}\nINFO:     172.17.0.1:46956 - \"GET /gesundheit HTTP/1.1\" 503 Service Unavailable"
+    },
+    {
+      "fall": "Mit dokumentierter Konfiguration neu gestartet",
+      "ergebnis": {
+        "code": 0,
+        "dienst": "P02",
+        "zustand": "betriebsbereit",
+        "httpStatus": 200
+      }
+    },
+    {
+      "fall": "Eigener Container tatsächlich angehalten",
+      "ergebnis": {
+        "code": 3,
+        "zustand": "verbindungsfehler",
+        "fehler": "TypeError"
+      }
+    },
+    {
+      "fall": "Denselben Container wieder gestartet",
+      "ergebnis": {
+        "code": 0,
+        "dienst": "P02",
+        "zustand": "betriebsbereit",
+        "httpStatus": 200
+      },
+      "p02Status": {
+        "zustand": "bereit",
+        "ereignisanzahl": 3,
+        "fehleranzahl": 1,
+        "umgebungen": [
+          {
+            "umgebung": "entwicklung",
+            "ereignisanzahl": 2,
+            "fehleranzahl": 0
+          },
+          {
+            "umgebung": "test",
+            "ereignisanzahl": 1,
+            "fehleranzahl": 1
+          }
+        ]
+      }
+    }
+  ],
+  "grenze": "Nur eigene temporäre Container; keine fremden Dienste, Plattformen oder Systemrechte verändert."
+}

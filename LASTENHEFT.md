@@ -12,10 +12,10 @@ Lokale Einzelbenutzung, synthetische Daten und ein vorführbarer kleiner Ablauf.
 
 ## Abnahmekriterien
 
-- [ ] A1 — Dienst mit einer dokumentierten Befehlsfolge bauen und Gesundheitsendpunkt abfragen.
-- [ ] A2 — Ein provozierter Fehler erzeugt ein nutzbares Protokoll und einen Wiederherstellungsweg.
-- [ ] A3 — Ungültige Eingabe und fehlende Konfiguration gezielt prüfen.
-- [ ] A4 — Eine CI-Datei ist kein Ausführungsnachweis; tatsächlichen lokalen Runner-Lauf sichern.
+- [x] A1 — Dienst mit einer dokumentierten Befehlsfolge bauen und Gesundheitsendpunkt abfragen.
+- [x] A2 — Ein provozierter Fehler erzeugt ein nutzbares Protokoll und einen Wiederherstellungsweg.
+- [x] A3 — Ungültige Eingabe und fehlende Konfiguration gezielt prüfen.
+- [x] A4 — Eine CI-Datei ist kein Ausführungsnachweis; tatsächlichen lokalen Runner-Lauf sichern.
 
 ## Voraussetzungen
 
@@ -44,3 +44,5 @@ Eine gültige Eingabe, einen Fehlerfall, das Ergebnis und die zuständige Quellc
 Lokales Docker- und Automatisierungslabor; keine Erfahrung mit produktivem Cloudbetrieb daraus ableiten.
 
 Derzeit zutreffend: „Eigenes Lernprojekt in Vorbereitung: Lokale Bereitstellung und API-Diagnose“. „Umgesetzt“ setzt die tatsächliche Abnahme voraus.
+
+Abnahme 17. November 2026 durch tatsächlichen Containerbau, Gesundheitsabfrage, negative Eingaben/Konfiguration, echten Ausfall/Wiederanlauf und vierstufigen lokalen Runner. Belege: `nachweise/P07-T04-runner.json` und `nachweise/P07-T04-wiederherstellung.json`. Azure-Vorlage nicht ausgeführt.
